@@ -3,6 +3,8 @@ import logging, sys
 
 import tuf.client.updater
 
+# need to reference json so PyInstaller can find json to use with TUF
+import json
 
 def update():
   # Set the local repository directory containing the metadata files.
