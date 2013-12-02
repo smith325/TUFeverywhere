@@ -1,15 +1,16 @@
 # -*- mode: python -*-
 
-def Datafiles(*filenames, **kw):
-    import os    
+import platform   
 
+def Datafiles(*filenames, **kw):
+    import os
     def datafile(path, strip_path=True):
         parts = path.split('/')
         path = name = os.path.join(*parts)
         if strip_path:
             name = os.path.basename(path)
         else:
-            name = name.replace("../Project/","")
+            name = name.replace("../Project/","").replace("..\\Project\\","")
         print name+" "+path+" "+ 'DATA'
         return name, path, 'DATA'
 
@@ -37,10 +38,16 @@ a = Analysis(['../Project/example_client.py'],
              hookspath=None,
              runtime_hooks=None)
 pyz = PYZ(a.pure)
+
+if platform.system() == "Windows":
+  executablename = 'example_client.exe'
+else:
+  executablename = 'example_client'
+
 exe = EXE(pyz,
           a.scripts,
           exclude_binaries=True,
-          name='example_client',
+          name=executablename,
           debug=False,
           strip=None,
           upx=True,
