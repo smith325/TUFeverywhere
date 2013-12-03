@@ -11,7 +11,7 @@ def update():
   tuf.conf.repository_directory = '.'
 
 
-  repository_mirrors = {'mirror1': {'url_prefix': 'http://mirror1.poly.edu',
+  repository_mirrors = {'mirror1': {'url_prefix': 'http://localhost:8001',
                                     'metadata_path': 'metadata',
                                     'targets_path': 'targets',
                                     'confined_target_dirs': ['']}}
