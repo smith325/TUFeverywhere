@@ -11,7 +11,7 @@ def update():
   tuf.conf.repository_directory = '.'
 
 
-  repository_mirrors = {'mirror1': {'url_prefix': 'http://localhost:8001',
+  repository_mirrors = {'mirror1': {'url_prefix': 'http://mirror1.poly.edu',
                                     'metadata_path': 'metadata',
                                     'targets_path': 'targets',
                                     'confined_target_dirs': ['']}}
@@ -48,7 +48,7 @@ def main():
   try:
     update()
   except:
-    print sys.exc_info()[0]
+    raise
   loader()
 
 if __name__ == "__main__":

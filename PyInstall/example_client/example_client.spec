@@ -1,6 +1,8 @@
 # -*- mode: python -*-
 
-import platform   
+import platform
+
+
 
 def Datafiles(*filenames, **kw):
     import os
@@ -26,15 +28,15 @@ dbfile1 = Datafiles('../Project/metadata/current/release.txt',strip_path=False)
 dbfile2 = Datafiles('../Project/metadata/current/root.txt', strip_path=False)
 dbfile3 = Datafiles('../Project/metadata/current/targets.txt', strip_path=False)
 dbfile4 = Datafiles('../Project/metadata/current/timestamp.txt', strip_path=False)
-
 dbfile5 = Datafiles('../Project/metadata/previous/release.txt', strip_path=False)
 dbfile6 = Datafiles('../Project/metadata/previous/root.txt', strip_path=False)
 dbfile7 = Datafiles('../Project/metadata/previous/targets.txt', strip_path=False)
 dbfile8 = Datafiles('../Project/metadata/previous/timestamp.txt', strip_path=False)
 
+
 a = Analysis(['../Project/example_client.py'],
              pathex=['example_client'],
-             hiddenimports=['json','pkg_resources'],
+             hiddenimports=['pkg_resources'],
              hookspath=None,
              runtime_hooks=None)
 pyz = PYZ(a.pure)
