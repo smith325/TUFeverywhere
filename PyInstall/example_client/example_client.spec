@@ -1,8 +1,6 @@
 # -*- mode: python -*-
 
-import platform
-
-
+import platform   
 
 def Datafiles(*filenames, **kw):
     import os
@@ -28,15 +26,21 @@ dbfile1 = Datafiles('../Project/metadata/current/release.txt',strip_path=False)
 dbfile2 = Datafiles('../Project/metadata/current/root.txt', strip_path=False)
 dbfile3 = Datafiles('../Project/metadata/current/targets.txt', strip_path=False)
 dbfile4 = Datafiles('../Project/metadata/current/timestamp.txt', strip_path=False)
+
 dbfile5 = Datafiles('../Project/metadata/previous/release.txt', strip_path=False)
 dbfile6 = Datafiles('../Project/metadata/previous/root.txt', strip_path=False)
 dbfile7 = Datafiles('../Project/metadata/previous/targets.txt', strip_path=False)
 dbfile8 = Datafiles('../Project/metadata/previous/timestamp.txt', strip_path=False)
 
+dbfile9 = Datafiles('../Project/metadata/current/targets/django.txt', strip_path=False)
+dbfile10 = Datafiles('../Project/metadata/current/targets/django.txt.gz', strip_path=False)
+dbfile11 = Datafiles('../Project/metadata/previous/targets/django.txt', strip_path=False)
+dbfile12 = Datafiles('../Project/metadata/previous/targets/django.txt.gz', strip_path=False)
+
 
 a = Analysis(['../Project/example_client.py'],
              pathex=['example_client'],
-             hiddenimports=['pkg_resources'],
+             hiddenimports=['json','pkg_resources','Crypto.*'],
              hookspath=None,
              runtime_hooks=None)
 pyz = PYZ(a.pure)
@@ -70,4 +74,3 @@ coll = COLLECT(exe,
                strip=None,
                upx=True,
                name='example_client')
-
