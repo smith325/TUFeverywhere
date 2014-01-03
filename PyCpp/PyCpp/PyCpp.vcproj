@@ -60,7 +60,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="C:\Python27\libs\python27.lib"
+				AdditionalDependencies="C:\Python27\libs\python27.lib C:\Users\Sarah\Documents\GitHub\TUFeverywhere\PyCpp\PyCpp\example_client.lib"
 				LinkIncremental="2"
 				GenerateDebugInformation="true"
 				SubSystem="1"

@@ -59,11 +59,7 @@ exe = EXE(pyz,
           upx=True,
           console=True )
 
-dll = DLL(pyz,
-          a.scripts,
-          exclude_binaries=True,
-          name='example_client.dll',
-          debug= False)
+dll = DLL(exe)
 
 coll = COLLECT(exe,
                a.binaries,

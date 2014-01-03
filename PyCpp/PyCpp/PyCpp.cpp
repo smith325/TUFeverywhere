@@ -7,12 +7,18 @@
 #include <string>
 #include <stdio.h>
 
+
 using namespace std;
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	exec_pycode();
+	//exec_pycode();
+	dll();
 	return 0;
+}
+void dll(){
+	startUp();
+	//sayHi();
 }
 
 void exec_pycode()
