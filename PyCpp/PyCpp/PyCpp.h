@@ -1,8 +1,6 @@
 
 #define MS_NO_COREDLL
-#include "C:\Python27\include\Python.h"
-#include "C:\Users\Sarah\Documents\GitHub\pyinstaller\bootloader\windows\dllmain.h"
-#include "C:\Users\Sarah\Documents\GitHub\pyinstaller\bootloader\windows\dllmain.cpp"
+#include "..\..\..\pyinstaller\bootloader\windows\dllmain.h"
 
 #ifndef PyCpp_H_
 #define PyCpp_H_

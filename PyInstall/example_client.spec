@@ -45,27 +45,14 @@ a = Analysis(['../Project/example_client.py'],
              runtime_hooks=None)
 pyz = PYZ(a.pure)
 
-if platform.system() == "Windows":
-  executablename = 'example_client.exe'
-else:
-  executablename = 'example_client'
-
-exe = EXE(pyz,
-          a.scripts,
-          exclude_binaries=True,
-          name=executablename,
-          debug=False,
-          strip=None,
-          upx=True,
-          console=True )
 
 dll = DLL(pyz,
           a.scripts,
           exclude_binaries=True,
-          name='example_client.dll',
-          debug= False)
+          name='inprocsrvr_d.dll',
+          debug= True)
 
-coll = COLLECT(exe,
+coll = COLLECT(dll,
                a.binaries,
                a.zipfiles,
                a.datas,
