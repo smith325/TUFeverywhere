@@ -21,7 +21,8 @@ int _tmain(int argc, _TCHAR* argv[])
 }
 void dll(){
 	startUp();
-	sayHi();
+	char * config = "C:\\Users\\Sarah\\Documents\\GitHub\\gemsontuf\\bridge\\local.json";
+	Py_TUF_configure(config,"./","./");
 }
 
 
