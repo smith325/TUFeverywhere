@@ -28,6 +28,8 @@ void useTUF()
 	if(!Py_TUF_configure(config,"./","./")){
 		printf("TUF error\n");
 	}
+
+	char * result = Py_TUF_urllib_urlopen("http://localhost:9294/metadata/current/timestamp.txt");
 }
 
 
