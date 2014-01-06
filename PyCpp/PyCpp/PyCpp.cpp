@@ -12,17 +12,22 @@ using namespace std;
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	dll();
+	startUp();
+	useTUF();
 
 	string line;
+	printf("hit enter to quit\n");
 	getline(cin,line);
 
 	return 0;
 }
-void dll(){
-	startUp();
-	char * config = "C:\\Users\\Sarah\\Documents\\GitHub\\gemsontuf\\bridge\\local.json";
-	Py_TUF_configure(config,"./","./");
+void useTUF()
+{
+	printf("trying to configure tuf\n");
+	char * config = "local.json";
+	if(!Py_TUF_configure(config,"./","./")){
+		printf("TUF error\n");
+	}
 }
 
 

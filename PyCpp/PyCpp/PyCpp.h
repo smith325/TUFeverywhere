@@ -6,7 +6,7 @@
 #define PyCpp_H_
 
 void exec_pycode();
-void dll();
+void useTUF();
 
 
 #endif
