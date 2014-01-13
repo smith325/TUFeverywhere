@@ -16,8 +16,12 @@ Pyinstaller
 
 
 ### pyi_python C files
-- Added missing python functions to the macros lists stored in these C files
+- Used macros to export missing python functions (python functions are loaded at runtime)
 - Exported a group of python functions to work with the rubygems code
+
+
+### pyi_importers.py file
+- Modififed pyimporters.py to add a load_module_with_alias function (to work with pyinstaller) to be able to load the same module more than once under a different name (necessary for TUF interposition)
 
 
 ### waf files
@@ -26,21 +30,19 @@ Pyinstaller
 
 
 ### spec file
-- Goal is to be able to import TUF
-- Created a spec file to run analysis on the specified python source file
-
-
-
-### waf build install
-- Need to do this if making changes to dllmain
-- ```python waf build install```
-
+- Configures the settings for Pyinstaller to create the dll
+- Created to run analysis on TUF and its dependencies so they can all be included in the dll
 
 ### build script
 - Done after waf; Runs pyinstaller on spec file
 - Grabs everything required to build a 3rd party application and build against the inprocsrvr_d.dll (all the dll's, inprocsrvr_d lib file, and the dllmain.h header)
 
 
+
+### Making changes to dllmain
+- ```python waf build install```
+- ```./build.ps1```
+- build 3rd party project, specific instructions are dependent on your own implementation, but must include inprocsrvr_d.lib,  inprocsrvr_d.dll, and dllmain.h 
 
 
 TUF
