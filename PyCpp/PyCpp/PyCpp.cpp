@@ -12,7 +12,7 @@ using namespace std;
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	startUp();
+	Py_TUF_startUp();
 	useTUF();
 
 	string line;
@@ -29,7 +29,7 @@ void useTUF()
 		printf("TUF error\n");
 	}
 
-	char * result = Py_TUF_urllib_urlopen("http://localhost:9294/metadata/current/timestamp.txt");
+	char * result = Py_TUF_urllib_urlopen("http://192.168.1.7:8001/metadata/timestamp.txt");
 }
 
 
