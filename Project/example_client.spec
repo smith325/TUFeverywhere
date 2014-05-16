@@ -1,6 +1,6 @@
 # -*- mode: python -*-
 a = Analysis(['.\\example_client.py'],
-             pathex=['C:\\Users\\Sarah\\Documents\\GitHub\\TUFeverywhere\\PyInstall'],
+             pathex=['C:\\Users\\Sarah\\Documents\\GitHub\\TUFeverywhere\\Project'],
              hiddenimports=[],
              hookspath=None,
              runtime_hooks=None)
